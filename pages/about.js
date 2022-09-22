@@ -27,7 +27,7 @@ export default function Home({ designers }) {
   return (
     <div className="container">
       <Head>
-        <title>Brazilians Who Design | About</title>
+        <title>Dutch Who Design | About</title>
         <link rel="icon" href="/favicon.ico" />
         <MetaTags />
       </Head>
@@ -38,7 +38,7 @@ export default function Home({ designers }) {
 
       <Title
         className="title m0 p0"
-        text="Brazilians*who&nbsp;design&nbsp;is&nbsp;a"
+        text="Dutch*who&nbsp;design&nbsp;is&nbsp;a"
         noAnimation
       />
 
@@ -51,7 +51,7 @@ export default function Home({ designers }) {
         <p className="f1 extend">
           <motion.span variants={item}>place to showcase</motion.span>{" "}
           <motion.span variants={item}>the work of talented</motion.span>{" "}
-          <motion.span variants={item}>Brazilian designers to</motion.span>{" "}
+          <motion.span variants={item}>Dutch designers to</motion.span>{" "}
           <motion.span variants={item}>the world. The goal</motion.span>{" "}
           <motion.span variants={item}>is to inspire new</motion.span>{" "}
           <motion.span variants={item}>designers to diversify</motion.span>{" "}
@@ -68,7 +68,7 @@ export default function Home({ designers }) {
         <div className="col-left">
           <h3>How can I nominate someone?</h3>
           <p>
-            If you know a Brazilian designer whose work or voice is valuable to
+            If you know a Dutch designer whose work or voice is valuable to
             the design industry, please{" "}
             <Link href="/nominate">
               <a className="link">fill out this form</a>
@@ -84,10 +84,10 @@ export default function Home({ designers }) {
 
           <h3>Why are featuring artists as well?</h3>
           <p>
-            We wanted to showcase not only contemporary Brazilian design, but
+            We wanted to showcase not only contemporary Dutch design, but
             also leverage all the visibility that this project is getting to
             celebrate the history of design in our country. Every time you
-            reload the website there’s a new featured Brazilian designer you can
+            reload the website there’s a new featured Dutch designer you can
             learn more about.
           </p>
 
@@ -147,15 +147,20 @@ export default function Home({ designers }) {
                 Asian & Pacific Islanders Who Design
               </a>
             </li>
+            <li>
+              <a className="link" href="https://brazilianswho.design/">
+              Brazilians Who Design
+              </a>
+            </li>
           </ul>
 
           <h3>How did you build this?</h3>
           <p>
-            Brazilians Who Design is{" "}
+            Dutch Who Design is{" "}
             <a
               className="link"
               target="_blank"
-              href="https://github.com/zehfernandes/brazilianswhodesign"
+              href="https://github.com/DannyRuchtie/dutchwhodesign"
             >
               open source
             </a>{" "}
@@ -190,12 +195,8 @@ export default function Home({ designers }) {
               </a>
             </li>
           </ul>
-          <br />
-          <p>
-            Thanks to Caio Braga, Rafael Frota, Karina Sirqueira, Al Lucca,
-            Bruno Oyama, Fabio Sasso, Daniel Furtado, Rodrigo Muniz, Lucas
-            Falcão, for the help of gathering the initial list of designers.
-          </p>
+
+
 
           <h3>Who’s behind this?</h3>
           <ul>
@@ -205,13 +206,8 @@ export default function Home({ designers }) {
               </a>
             </li>
             <li>
-              <a className="link" href="http://twitter.com/fabriciot">
-                Fabricio Teixeira
-              </a>
-            </li>
-            <li>
-              <a className="link" href="http://uxdesign.cc/">
-                UX Collective
+              <a className="link" href="http://twitter.com/DannyRuchtie">
+                Danny Ruchtie
               </a>
             </li>
           </ul>
