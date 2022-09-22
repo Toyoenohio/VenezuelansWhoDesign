@@ -253,11 +253,13 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
           text-align: right;
         }
 
+
         @media (max-width: 480px) {
           .thsize-aux {
             width: 30%;
           }
         }
+        
 
         tbody a {
           width: 100%;

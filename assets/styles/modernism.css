@@ -8,13 +8,15 @@ html {
 }
 
 body {
-  font-family: "Helvetica Now Display", "Helvetica Neue", "Helvetica";
-  background: #000;
-  color: #fff;
+  font-family: "-apple-system, BlinkMacSystemFont, Helvetica Now Display", "Helvetica Neue", "Helvetica";
+  background: #fff;
+  color: #000;
   font-weight: 500;
   margin: 0;
   padding: 0;
 }
+
+
 
 .container {
   width: 95vw;
@@ -56,7 +58,7 @@ table {
 table tbody td,
 table thead td {
   border: none;
-  border-bottom: 1px solid #363636;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 table.large thead {
@@ -68,12 +70,14 @@ table.large tbody {
 }
 
 table tbody tr {
+  background: #fff;
   cursor: pointer;
   transition: background 150ms ease-in-out;
 }
 
+
 table tbody tr:hover {
-  background: #111111;
+  background: rgba(0,0,0,0.05);
 }
 
 /* Rethink is the best aproch */
@@ -95,7 +99,14 @@ table tbody tr:last-child td {
 
 .letter {
   display: inline-block;
+
 }
+
+.letter:nth-child(-n+5){
+  color: #FF6B00;
+  color: color(display-p3 1 0.36 0);
+}
+
 
 .title {
   padding-top: 26vh;
@@ -117,8 +128,8 @@ table tbody tr:last-child td {
 }
 
 .arrowback {
-  color: #fff;
   font-size: 3rem;
+  color:#000;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
@@ -130,7 +141,7 @@ table tbody tr:last-child td {
 }
 
 a.link {
-  --color: #fff;
+  --color: #000;
   position: relative;
   color: var(--color);
   text-decoration: none;
@@ -151,7 +162,7 @@ a.link:before {
   position: absolute;
   background-size: 1px 1em;
   background-size: 1px 1em;
-  box-shadow: inset 0 -0.05em var(--color), inset 0 -0.1em #000;
+  /* box-shadow: inset 0 -0.05em var(--color), inset 0 -0.1em #000; */
   transition: box-shadow 150ms ease;
   transform-origin: 0% 0%;
 }
@@ -164,6 +175,7 @@ a.link:after {
   content: " ↗";
   transition: transform 150ms ease;
 }
+
 
 .sticky {
   display: table;
@@ -210,8 +222,10 @@ a.link:after {
   h1,
   .f1 {
     font-size: 4rem;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.02em;     
   }
+
+
 
   .dn {
     display: none;
@@ -238,4 +252,38 @@ a.link:after {
   :root {
     font-size: 18px;
   }
+}
+
+
+
+@media (prefers-color-scheme: dark) {
+  body {
+  background: #000;
+  color: #fff;  
+  }
+
+
+  .arrowback {
+    color: #fff;
+  }
+  
+  a.link {
+    --color: #fff;
+  }
+
+  table tbody td,
+  table thead td {
+  border: none;
+  border-bottom: 1px solid #363636;
+}
+
+  table tbody tr {
+    background: #000;
+  }
+  
+  table tbody tr:hover {
+    color:#fff;
+    background: rgba(255,255,255,0.05);
+  }
+
 }
