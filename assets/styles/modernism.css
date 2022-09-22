@@ -183,7 +183,7 @@ a.link:after {
 .sticky tr {
   position: fixed;
   width: 95vw;
-  background: #000;
+  background: #fff;
   padding: 1.5rem 0 1rem 0;
   display: table;
   top: -4rem;
@@ -269,6 +269,10 @@ a.link:after {
   
   a.link {
     --color: #fff;
+  }
+
+  .sticky tr {
+    background: #000;
   }
 
   table tbody td,
