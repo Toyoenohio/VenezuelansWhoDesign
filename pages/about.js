@@ -196,6 +196,8 @@ export default function Home({ designers }) {
             </li>
           </ul>
 
+          <p>Special thanks to Zeh Fernandes and Ming Shi </p>
+
 
 
           <h3>Who’s behind this?</h3>
@@ -211,6 +213,8 @@ export default function Home({ designers }) {
               </a>
             </li>
           </ul>
+
+
         </div>
         <div className="col-right">
           <h3>How can I remove my name?</h3>
