@@ -12,11 +12,11 @@ export async function getStaticProps() {
   const origin =
     process.env.NODE_ENV !== "production"
       ? "http://localhost:3000"
-      : "https://dutchwho.design";
+      : "https://dutchwho.design/";
 
   console.log(origin)
 
-  const res = await fetch(`${origin}/api/designers`);
+  const res = await fetch(`${origin}api/designers`);
   console.log(res)
   const designers = await res.json();
 
