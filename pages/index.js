@@ -11,7 +11,7 @@ import FilterSVG from "../components/Icons/FilterSVG.js";
 export async function getStaticProps() {
   const origin =
     process.env.NODE_ENV !== "production"
-      ? "http://localhost:3000"
+      ? "http://localhost:3000/"
       : "https://dutchwho.design/";
 
   console.log(origin);
