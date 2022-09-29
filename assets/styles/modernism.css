@@ -1,4 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+@font-face {
+  font-family: 'Auto-bold';
+  src:url('/AutoPro-Bold.woff') format('woff');
+}
+
+
+@font-face {
+  font-family: 'Auto-black';
+  src:url('/AutoPro-Black.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Auto-italic';
+  src:url('/AutoPro-BoldItalic1.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Auto-italic-2';
+  src:url('/AutoPro-BoldItalic2.woff') format('woff');
+}
 
 html {
   box-sizing: border-box;
@@ -10,10 +29,12 @@ html {
 }
 
 body {
-  font-family: "IBM Plex Sans", "-apple-system, BlinkMacSystemFont, Helvetica Now Display", "Helvetica Neue", "Helvetica";
+  font-family:"Auto-bold", "-apple-system, BlinkMacSystemFont, Helvetica Now Display", "Helvetica Neue", "Helvetica";
+  font-size: 20px;
+  line-height: 1.5rem;
+  letter-spacing: .2px;
   background: #fff;
   color: #111;
-  font-weight: 500;
   margin: 0;
   padding: 0;
 }
@@ -28,6 +49,17 @@ body {
 
 a {
   text-decoration: none;
+
+}
+
+.moreabout a{
+  font-family: "Auto-bold";
+}
+
+.moreabout a:hover{
+  font-family: "Auto-italic";
+  color: #FF6B00;
+  color: color(display-p3 1 0.36 0);
 }
 
 /* Type 
@@ -35,12 +67,27 @@ a {
 
 h1,
 .f1 {
+  font-family:"Auto-black";
   font-size: 5.625rem;
-  letter-spacing: -0.03em;
+  /* letter-spacing: -0.03em; */
   line-height: 100%;
   font-weight: 500;
-  font-feature-settings: "ss08" on, "ss02" on, "ss01" on, "salt" on, "cpsp" on;
+  letter-spacing: 0px;
+  /* font-feature-settings: "ss08" on, "ss02" on, "ss01" on, "salt" on, "cpsp" on; */
 }
+
+h3{
+font-size:1.5rem;
+line-height: 1.7rem;
+padding:0;
+margin:1rem 0 0 0;
+letter-spacing: 0px;
+}
+
+p{
+  margin: .25rem 0 4rem 0;
+}
+
 
 /* Utils 
  ----------------------------- */
@@ -55,6 +102,10 @@ h1,
  ----------------------------- */
 table {
   width: 100%;
+}
+
+table a{
+  font-family:"Auto-bold";
 }
 
 table tbody td,
@@ -166,9 +217,10 @@ a.link:before {
   transform-origin: 0% 0%;
 }
 
-a.link:hover {
-  --color: #757575;
+a.link {
+  --color: #5e5e5e;
 }
+
 
 a.link:after {
   content: " ↗";
@@ -259,6 +311,7 @@ a.link:after {
   body {
   background: #111;
   color: rgba(255,255,255,0.8);  
+  letter-spacing: .3px;
   }
 
 

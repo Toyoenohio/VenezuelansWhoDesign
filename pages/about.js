@@ -196,25 +196,15 @@ export default function Home({ designers }) {
             </li>
           </ul>
 
-          <p>Special thanks to Zeh Fernandes and Ming Shi </p>
+        
 
 
 
           <h3>Who’s behind this?</h3>
-          <ul>
-            <li>
-              <a className="link" href="https://twitter.com/zehf">
-                Zeh Fernandes
-              </a>
-            </li>
-            <li>
-              <a className="link" href="http://twitter.com/DannyRuchtie">
-                Danny Ruchtie
-              </a>
-            </li>
-          </ul>
-
-
+          <p> Dutch who design is an Initiative by <a className="link" href="http://twitter.com/DannyRuchtie">
+                Danny Ruchtie </a> with special help from <a className="link" href="https://twitter.com/zehf">
+                Zeh Fernandes</a> and Ming Shi </p>
+      
         </div>
         <div className="col-right">
           <h3>How can I remove my name?</h3>
@@ -243,9 +233,9 @@ export default function Home({ designers }) {
 
         .moreabout {
           font-weight: normal;
-          font-size: 1.5rem;
-          line-height: 140%;
-          letter-spacing: 0.01em;
+
+
+
           display: flex;
           margin-top: 8rem;
         }
@@ -262,20 +252,9 @@ export default function Home({ designers }) {
           padding-right: 3rem;
         }
 
-        .moreabout p {
-          margin: 0;
-          padding: 0;
-        }
 
-        .moreabout h3 {
-          padding: 0;
-          margin: 0;
-          font-size: 1.5rem;
-        }
 
-        .moreabout h3 {
-          margin: 4rem 0 0 0;
-        }
+
 
         ul,
         li {
@@ -284,6 +263,10 @@ export default function Home({ designers }) {
           list-style: none;
           margin-top: 0.3rem;
         }
+
+ul{
+  margin: 0.3rem 0 4rem 0;
+}
 
         @media (max-width: 480px) {
           .moreabout {
