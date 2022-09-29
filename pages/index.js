@@ -1,298 +1,302 @@
-export default function Page() {
-  return <div>placeholder</div>;
+import Head from "next/head";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Nav from "../components/Nav.js";
+import Filter from "../components/Filter.js";
+import Title from "../components/Title.js";
+import MetaTags from "../components/Metatags.js";
+import Analytics from "../components/Analytics.js";
+import FilterSVG from "../components/Icons/FilterSVG.js";
+
+export async function getStaticProps() {
+  const origin =
+    process.env.NODE_ENV !== "production"
+      ? "http://localhost:3000"
+      : "https://dutchwho.design/";
+
+  console.log(origin);
+
+  const res = await fetch(`${origin}api/designers`);
+  console.log(res);
+  const designers = await res.json();
+
+  let uniqueExpertise = new Set();
+  designers.map((d) => uniqueExpertise.add(d.expertise));
+
+  let uniqueLocation = new Set();
+  designers.map((d) => uniqueLocation.add(d.location));
+
+  let expertises = Array.from(uniqueExpertise).map((e) => {
+    return { label: e, active: false, category: "expertise" };
+  });
+
+  let locations = Array.from(uniqueLocation)
+    .sort()
+    .map((e) => {
+      return { label: e, active: false, category: "location" };
+    });
+
+  let filters = expertises.concat(locations);
+
+  return {
+    props: {
+      designers,
+      filters,
+    },
+  };
 }
 
-// import Head from "next/head";
-// import { useState, useEffect, useRef } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-// import Nav from "../components/Nav.js";
-// import Filter from "../components/Filter.js";
-// import Title from "../components/Title.js";
-// import MetaTags from "../components/Metatags.js";
-// import Analytics from "../components/Analytics.js";
-// import FilterSVG from "../components/Icons/FilterSVG.js";
+export default function Home({ designers, filters }) {
+  const [isReady, setIsReady] = useState(false);
+  const [designersList, setDesignersList] = useState(null);
+  const [filterIsOpen, setFilterIsOpen] = useState(false);
+  const [filterList, setFilterList] = useState(filters);
+  const [filterCategory, setFilterCategory] = useState(null);
 
-// export async function getStaticProps() {
-//   const origin =
-//     process.env.NODE_ENV !== "production"
-//       ? "http://localhost:3000"
-//       : "https://dutchwho.design/";
+  useEffect(() => {
+    setDesignersList(shuffle(designers).sort((a, b) => a.order - b.order));
+  }, []);
 
-//   console.log(origin)
+  // Filter
+  const handleCloseFilter = (e) => {
+    setFilterIsOpen(false);
 
-//   const res = await fetch(`${origin}api/designers`);
-//   console.log(res)
-//   const designers = await res.json();
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
 
-//   let uniqueExpertise = new Set();
-//   designers.map((d) => uniqueExpertise.add(d.expertise));
+  const handleOpenFilter = (category) => {
+    setFilterCategory(category);
+    setFilterIsOpen(true);
+  };
 
-//   let uniqueLocation = new Set();
-//   designers.map((d) => uniqueLocation.add(d.location));
+  const clearFilter = () => {
+    let newFilter = filters.map(({ label }) => {
+      return { label: label, active: false };
+    });
 
-//   let expertises = Array.from(uniqueExpertise).map((e) => {
-//     return { label: e, active: false, category: "expertise" };
-//   });
+    setFilterList(newFilter);
+    setDesignersList(
+      shuffle(designers).sort((a, b) => a.featured - b.featured)
+    );
+  };
 
-//   let locations = Array.from(uniqueLocation)
-//     .sort()
-//     .map((e) => {
-//       return { label: e, active: false, category: "location" };
-//     });
+  const handleFilterClick = (item) => {
+    let indexof = filterList.indexOf(item);
+    filterList[indexof].active = filterList[indexof].active ? false : true;
+    setFilterList(filterList);
 
-//   let filters = expertises.concat(locations);
+    // Get Each column
+    let filterExpert = filterList
+      .filter((f) => f.category == "expertise")
+      .map((d) => d.label);
+    let filterLocation = filterList
+      .filter((f) => f.category == "location")
+      .map((d) => d.label);
 
-//   return {
-//     props: {
-//       designers,
-//       filters,
-//     },
-//   };
-// }
+    // Find active
+    let activeFilters = filterList
+      .filter((d) => d.active == true)
+      .map((d) => d.label);
 
-// export default function Home({ designers, filters }) {
-//   const [isReady, setIsReady] = useState(false);
-//   const [designersList, setDesignersList] = useState(null);
-//   const [filterIsOpen, setFilterIsOpen] = useState(false);
-//   const [filterList, setFilterList] = useState(filters);
-//   const [filterCategory, setFilterCategory] = useState(null);
+    // If none in that category check all
+    if (filterExpert.filter((f) => activeFilters.includes(f)).length <= 0)
+      activeFilters = activeFilters.concat(filterExpert);
+    if (filterLocation.filter((f) => activeFilters.includes(f)).length <= 0)
+      activeFilters = activeFilters.concat(filterLocation);
 
-//   useEffect(() => {
-//     setDesignersList(shuffle(designers).sort((a, b) => a.order - b.order));
-//   }, []);
+    // Filter render list
+    if (activeFilters.length > 0)
+      setDesignersList(
+        designers.filter(
+          (d) =>
+            activeFilters.includes(d.expertise) &&
+            activeFilters.includes(d.location)
+        )
+      );
+    else clearFilter();
+  };
 
-//   // Filter
-//   const handleCloseFilter = (e) => {
-//     setFilterIsOpen(false);
+  return (
+    <div
+      className="container"
+      style={{
+        overflow: isReady ? "hidden" : "visible",
+      }}
+    >
+      <Head>
+        <title>Dutch Who Design</title>
+        <link id="favicon" rel="alternate icon" href="/favicon.ico" />
+        <MetaTags />
+      </Head>
 
-//     e.preventDefault();
-//     e.stopPropagation();
-//     return false;
-//   };
+      {!isReady ? (
+        <Content
+          designers={designersList}
+          handleOpenFilter={handleOpenFilter}
+          onClick={filterIsOpen ? handleCloseFilter : undefined}
+          className={filterIsOpen ? "filterIsOpen" : ""}
+        />
+      ) : null}
 
-//   const handleOpenFilter = (category) => {
-//     setFilterCategory(category);
-//     setFilterIsOpen(true);
-//   };
+      <AnimatePresence>
+        {filterIsOpen ? (
+          <Filter
+            items={filterList.filter((f) => f.category == filterCategory)}
+            handleFilterClick={handleFilterClick}
+            handleCloseFilter={handleCloseFilter}
+            categoryName={filterCategory}
+          />
+        ) : null}
+      </AnimatePresence>
 
-//   const clearFilter = () => {
-//     let newFilter = filters.map(({ label }) => {
-//       return { label: label, active: false };
-//     });
+      <style global jsx>{`
+        html,
+        body {
+          overflow: ${filterIsOpen ? "hidden" : "auto"};
+        }
+      `}</style>
+    </div>
+  );
+}
 
-//     setFilterList(newFilter);
-//     setDesignersList(
-//       shuffle(designers).sort((a, b) => a.featured - b.featured)
-//     );
-//   };
+function Content({ designers, handleOpenFilter, className, onClick }) {
+  const tableHeaderRef = useRef();
 
-//   const handleFilterClick = (item) => {
-//     let indexof = filterList.indexOf(item);
-//     filterList[indexof].active = filterList[indexof].active ? false : true;
-//     setFilterList(filterList);
+  useEffect(() => {
+    const header = tableHeaderRef.current;
+    const sticky = header.getBoundingClientRect().top + 40;
+    const scrollCallBack = window.addEventListener("scroll", () => {
+      if (window.pageYOffset > sticky) {
+        header.classList.add("sticky");
+      } else {
+        header.classList.remove("sticky");
+      }
+    });
+    return () => {
+      window.removeEventListener("scroll", scrollCallBack);
+    };
+  }, []);
 
-//     // Get Each column
-//     let filterExpert = filterList
-//       .filter((f) => f.category == "expertise")
-//       .map((d) => d.label);
-//     let filterLocation = filterList
-//       .filter((f) => f.category == "location")
-//       .map((d) => d.label);
+  return (
+    <div className={className} onClick={onClick}>
+      <Nav />
 
-//     // Find active
-//     let activeFilters = filterList
-//       .filter((d) => d.active == true)
-//       .map((d) => d.label);
+      <Title className="title m0 p0" text="Dutch*who&nbsp;design" />
 
-//     // If none in that category check all
-//     if (filterExpert.filter((f) => activeFilters.includes(f)).length <= 0)
-//       activeFilters = activeFilters.concat(filterExpert);
-//     if (filterLocation.filter((f) => activeFilters.includes(f)).length <= 0)
-//       activeFilters = activeFilters.concat(filterLocation);
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <table className="large tableContent" cellSpacing="0">
+          <thead id="tableHeader" ref={tableHeaderRef}>
+            <tr>
+              <td>Name</td>
+              <td
+                className="thsize-aux dn filterTable"
+                onClick={(e) => {
+                  handleOpenFilter("location");
 
-//     // Filter render list
-//     if (activeFilters.length > 0)
-//       setDesignersList(
-//         designers.filter(
-//           (d) =>
-//             activeFilters.includes(d.expertise) &&
-//             activeFilters.includes(d.location)
-//         )
-//       );
-//     else clearFilter();
-//   };
+                  e.preventDefault();
+                }}
+              >
+                Location <FilterSVG />
+              </td>
+              <td
+                className="thsize-aux filterTable"
+                onClick={(e) => {
+                  handleOpenFilter("expertise");
 
-//   return (
-//     <div
-//       className="container"
-//       style={{
-//         overflow: isReady ? "hidden" : "visible",
-//       }}
-//     >
-//       <Head>
-//         <title>Dutch Who Design</title>
-//         <link id="favicon" rel="alternate icon" href="/favicon.ico" />
-//         <MetaTags />
-//       </Head>
+                  e.preventDefault();
+                }}
+              >
+                Expertise <FilterSVG />
+              </td>
+              <td className="thsize-link"></td>
+            </tr>
+          </thead>
+          {designers != null ? (
+            <tbody>
+              {designers.map((d, i) => (
+                <tr key={`${d.name}-${i}`}>
+                  <td>
+                    <a href={d.link}>{d.name}</a>
+                  </td>
+                  <td className="thsize-aux dn">
+                    <a href={d.link}>{d.location}</a>
+                  </td>
+                  <td className="thsize-aux">
+                    <a href={d.link}>{d.expertise}</a>
+                  </td>
+                  <td className="thsize-link">
+                    <a href={d.link}>→</a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          ) : null}
+        </table>
+      </motion.div>
+      <style jsx>{`
+        .tableContent {
+          padding-top: 18vh;
+        }
 
-//       {!isReady ? (
-//         <Content
-//           designers={designersList}
-//           handleOpenFilter={handleOpenFilter}
-//           onClick={filterIsOpen ? handleCloseFilter : undefined}
-//           className={filterIsOpen ? "filterIsOpen" : ""}
-//         />
-//       ) : null}
+        .filterTable {
+          cursor: pointer;
+        }
 
-//       <AnimatePresence>
-//         {filterIsOpen ? (
-//           <Filter
-//             items={filterList.filter((f) => f.category == filterCategory)}
-//             handleFilterClick={handleFilterClick}
-//             handleCloseFilter={handleCloseFilter}
-//             categoryName={filterCategory}
-//           />
-//         ) : null}
-//       </AnimatePresence>
+        thead {
+          height: 2.2rem;
+        }
 
-//       <style global jsx>{`
-//         html,
-//         body {
-//           overflow: ${filterIsOpen ? "hidden" : "auto"};
-//         }
-//       `}</style>
-//     </div>
-//   );
-// }
+        .thsize-aux {
+          width: 20%;
+        }
 
-// function Content({ designers, handleOpenFilter, className, onClick }) {
-//   const tableHeaderRef = useRef();
+        .thsize-link {
+          width: 2rem;
+          text-align: right;
+        }
 
-//   useEffect(() => {
-//     const header = tableHeaderRef.current;
-//     const sticky = header.getBoundingClientRect().top + 40;
-//     const scrollCallBack = window.addEventListener("scroll", () => {
-//       if (window.pageYOffset > sticky) {
-//         header.classList.add("sticky");
-//       } else {
-//         header.classList.remove("sticky");
-//       }
-//     });
-//     return () => {
-//       window.removeEventListener("scroll", scrollCallBack);
-//     };
-//   }, []);
+        @media (max-width: 480px) {
+          .thsize-aux {
+            width: 30%;
+          }
+        }
 
-//   return (
-//     <div className={className} onClick={onClick}>
-//       <Nav />
+        tbody a {
+          width: 100%;
+          padding-bottom: 0.6em;
+          padding-top: 0.6em;
+          color: inherit;
+          display: inline-block;
+        }
 
-//       <Title className="title m0 p0" text="Dutch*who&nbsp;design" />
+        table tbody td {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      `}</style>
 
-//       <motion.div
-//         initial={{ opacity: 0 }}
-//         animate={{ opacity: 1 }}
-//         exit={{ opacity: 0 }}
-//       >
-//         <table className="large tableContent" cellSpacing="0">
-//           <thead id="tableHeader" ref={tableHeaderRef}>
-//             <tr>
-//               <td>Name</td>
-//               <td
-//                 className="thsize-aux dn filterTable"
-//                 onClick={(e) => {
-//                   handleOpenFilter("location");
+      <Analytics />
+    </div>
+  );
+}
 
-//                   e.preventDefault();
-//                 }}
-//               >
-//                 Location <FilterSVG />
-//               </td>
-//               <td
-//                 className="thsize-aux filterTable"
-//                 onClick={(e) => {
-//                   handleOpenFilter("expertise");
+function shuffle(array) {
+  var m = array.length,
+    temp,
+    i;
 
-//                   e.preventDefault();
-//                 }}
-//               >
-//                 Expertise <FilterSVG />
-//               </td>
-//               <td className="thsize-link"></td>
-//             </tr>
-//           </thead>
-//           {designers != null ? (
-//             <tbody>
-//               {designers.map((d, i) => (
-//                 <tr key={`${d.name}-${i}`}>
-//                   <td><a href={d.link}>{d.name}</a></td>
-//                   <td className="thsize-aux dn"><a href={d.link}>{d.location}</a></td>
-//                   <td className="thsize-aux"><a href={d.link}>{d.expertise}</a></td>
-//                   <td className="thsize-link"><a href={d.link}>→</a></td>
-//                 </tr>
-//               ))}
-//             </tbody>
-//           ) : null}
-//         </table>
-//       </motion.div>
-//       <style jsx>{`
-//         .tableContent {
-//           padding-top: 18vh;
-//         }
+  while (m) {
+    i = Math.floor(Math.random() * m--);
+    temp = array[m];
+    array[m] = array[i];
+    array[i] = temp;
+  }
 
-//         .filterTable {
-//           cursor: pointer;
-//         }
-
-//         thead {
-//           height: 2.2rem;
-//         }
-
-//         .thsize-aux {
-//           width: 20%;
-//         }
-
-//         .thsize-link {
-//           width: 2rem;
-//           text-align: right;
-//         }
-
-//         @media (max-width: 480px) {
-//           .thsize-aux {
-//             width: 30%;
-//           }
-//         }
-
-//         tbody a {
-//           width: 100%;
-//           padding-bottom: 0.6em;
-//           padding-top: 0.6em;
-//           color: inherit;
-//           display: inline-block;
-//         }
-
-//         table tbody td {
-//           padding-top: 0;
-//           padding-bottom: 0;
-//         }
-//       `}</style>
-
-//       <Analytics />
-//     </div>
-//   );
-// }
-
-// function shuffle(array) {
-//   var m = array.length,
-//     temp,
-//     i;
-
-//   while (m) {
-//     i = Math.floor(Math.random() * m--);
-//     temp = array[m];
-//     array[m] = array[i];
-//     array[i] = temp;
-//   }
-
-//   return array;
-// }
+  return array;
+}
