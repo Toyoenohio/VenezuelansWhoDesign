@@ -181,6 +181,7 @@ table tbody tr:last-child td {
 }
 
 .arrowback {
+  font-family: "-apple-system, BlinkMacSystemFont, Helvetica Now Display", "Helvetica Neue", "Helvetica";;
   font-size: 3rem;
   color:#111;
   text-decoration: none;
@@ -282,7 +283,6 @@ a.link:after {
   }
 
   .arrowback {
-    font-family: "-apple-system, BlinkMacSystemFont, Helvetica Now Display", "Helvetica Neue", "Helvetica";;
     transition: none;
   }
 
