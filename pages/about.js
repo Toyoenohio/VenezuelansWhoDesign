@@ -86,7 +86,7 @@ export default function Home({ designers }) {
           <h3>How did you come up with this idea?</h3>
           <p>
           We didn’t. Our fantastic sibling sites inspire this project:
-          </p>
+
           <ul>
             <li>
               <a className="link" href="https://womenwho.design/">
@@ -145,6 +145,8 @@ export default function Home({ designers }) {
               </a>
             </li>
           </ul>
+          </p>
+       
 
           <h3>How did you build this?</h3>
           <p>
