@@ -43,10 +43,10 @@ export default function Filter({
         >
           <CloseSVG />
         </a>
-        <h3>
+        <h4>
           {categoryName.charAt(0).charAt(0).toUpperCase() +
             categoryName.slice(1)}
-        </h3>
+        </h4>
 
         {items.map((item, i) => (
           <FilterItem
