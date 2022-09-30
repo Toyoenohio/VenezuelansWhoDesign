@@ -218,8 +218,8 @@ a.link:before {
 
 
 a.link:after {
-  font-family: monospace;
-  content: "&#xFE0E↗";
+  font-family: Helvetica Now Display, Helvetica Neue, Helvetica;
+  content: " \2197 ";
   transition: transform 150ms ease;
 }
 
