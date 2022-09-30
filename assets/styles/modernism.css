@@ -194,11 +194,15 @@ table tbody tr:last-child td {
 }
 
 a.link {
-  font-family: "Auto-italic";
   color: #6e6e73;
   position: relative;
   transition: all 150ms ease;
 }
+
+a.link:hover{  
+  font-family: "Auto-italic";
+}
+
 
 a.link:before {
   width: 100%;
