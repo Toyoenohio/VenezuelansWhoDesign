@@ -68,32 +68,24 @@ export default function Home({ designers }) {
         <div className="col-left">
           <h3>How can I nominate someone?</h3>
           <p>
-            If you know a Dutch designer whose work or voice is valuable to
-            the design industry, please{" "}
+          If you know a Dutch designer whose work or voice is valuable to the design industry, please {" "}
             <Link href="/nominate">
               <a className="link">fill out this form</a>
             </Link>{" "}
-            with their information and a few words about why you're nominating
-            them. You can choose to link to their portfolio, to their Linkedin,
-            or to other social profiles — any link that you feel best represents
-            how that person is making a difference in the industry. We decided
-            not to collect or display the designer’s photo because we wanted the
-            repository to be less about what someone looks like and more about
-            how they’re making an impact in the industry.
+            with their information and a few words about why you’re nominating
+            them. You can link to their portfolio, Linkedin, or other social profiles — any link that you feel best represents how that person is making a difference in the industry. 
+            We decided not to collect or display the designer’s photo because we wanted the directory to be less about what someone looks like and more about how they impact the industry.
           </p>
 
           <h3>Why are featuring artists as well?</h3>
           <p>
-            We wanted to showcase not only contemporary Dutch design, but
-            also leverage all the visibility that this project is getting to
-            celebrate the history of design in our country. Every time you
-            reload the website there’s a new featured Dutch designer you can
-            learn more about.
+          We wanted to showcase not only contemporary Dutch design but also leverage all the visibility this project is getting to celebrate the history of design in our country. 
+          Every time you reload the website, you can learn more about a newly featured Dutch designer.
           </p>
 
           <h3>How did you come up with this idea?</h3>
           <p>
-            We didn’t. This project is inspired by our fantastic sibling sites:
+          We didn’t. Our fantastic sibling sites inspire this project:
           </p>
           <ul>
             <li>
@@ -164,9 +156,7 @@ export default function Home({ designers }) {
             >
               open source
             </a>{" "}
-            for you create your own showcase. It is built inspired by the tech
-            stack that Jules Forrest kindly made available on Github after
-            building{" "}
+            for you to create your showcase. It is built inspired by the tech stack that Jules Forrest kindly made available on GitHub after building{" "}
             <a
               className="link"
               target="_blank"
@@ -174,10 +164,11 @@ export default function Home({ designers }) {
             >
               Women Who Design.
             </a>
-            <br />
-            <br />
+           </p>
+
+           <p>   
             Sites built using our open-source platform:
-          </p>
+       
           <ul>
             <li>
               <a className="link" href="https://uruguayanswho.design/">
@@ -195,30 +186,27 @@ export default function Home({ designers }) {
               </a>
             </li>
           </ul>
-
+          </p>
         
 
 
 
           <h3>Who’s behind this?</h3>
           <p> Dutch who design is an Initiative by <a className="link" href="http://twitter.com/DannyRuchtie">
-                Danny Ruchtie </a> with special help from <a className="link" href="https://twitter.com/zehf">
-                Zeh Fernandes</a> and Ming Shi </p>
+                Danny Ruchtie </a> with exceptional help from <a className="link" href="https://twitter.com/zehf">
+                Zeh Fernandes</a> and <a className="link" href="https://twitter.com/MingshiMr">Ming Shi</a> </p>
       
         </div>
         <div className="col-right">
           <h3>How can I remove my name?</h3>
           <p>
             If you’ve been added to the directory and would like to opt-out or
-            make an edit to your profile, please send us a message at
-            hello@dannyruchtie.com.
+            make an edit to your profile, please send us a <a className="link" href="mailto:hello@dannyruchtie.com">message</a>
           </p>
-          <h3>Why is my nomination taking so long to show?</h3>
+          <h3>Why is my nomination not showing?</h3>
           <p>
-            We update this website once a week to include new names. To ensure a
-            healthy gender balance on this website, some nominations might take
-            longer to appear. In the meantime, try nominating a designer who
-            identifies as a woman or non-binary.
+          We update this website once a week to include new names. Some nominations might take longer to appear to ensure a healthy gender balance on this website.
+          In the meantime, try nominating a designer who identifies as a woman or non-binary.
           </p>
         </div>
 
