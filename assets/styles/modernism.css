@@ -218,8 +218,8 @@ a.link:before {
 
 
 a.link:after {
-  font-family: "-apple-system, BlinkMacSystemFont, Helvetica Now Display", "Helvetica Neue", "Helvetica";;
-  content: " ↗";
+  font-family: monospace;
+  content: "&#xFE0E↗";
   transition: transform 150ms ease;
 }
 

@@ -223,9 +223,6 @@ export default function Home({ designers }) {
 
         .moreabout {
           font-weight: normal;
-
-
-
           display: flex;
           margin-top: 8rem;
         }
@@ -243,7 +240,7 @@ export default function Home({ designers }) {
         }
 
 
-
+        }
 
 
         ul,
