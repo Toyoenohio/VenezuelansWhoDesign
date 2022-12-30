@@ -23,6 +23,13 @@ export default function MetaTags() {
         content="http://dutchswho.design/img/preview.png"
       />
 
+<meta name="theme-color" 
+      content="#fff" 
+      media="(prefers-color-scheme: light)">
+<meta name="theme-color" 
+      content="#111" 
+      media="(prefers-color-scheme: dark)">
+
       {/* <!-- Twitter --/> */}
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="http://Dutchswho.design" />

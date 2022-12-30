@@ -236,7 +236,7 @@ a.link:after {
   background: #fff;
   padding: 1.5rem 0 1rem 0;
   display: table;
-  top: -4rem;
+  top: -6rem;
   transform: translateY(4rem);
   transition: transform 400ms ease-out;
 }
