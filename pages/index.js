@@ -228,7 +228,7 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
               {designers.map((d, i) => (
                 <tr key={`${d.name}-${i}`}>
                   <td>
-                    <a href={d.link}>{d.name}</a>
+                    <a target="_blank" href={d.link}>{d.name}</a>
                   </td>
                   <td className="thsize-aux dn">
                     <a href={d.link}>{d.location}</a>
