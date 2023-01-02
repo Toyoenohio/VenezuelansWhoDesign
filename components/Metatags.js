@@ -18,10 +18,7 @@ export default function MetaTags() {
         property="og:description"
         content="A repository to celebrate the work of talented Dutch designers and showcase it to the world."
       />
-      <meta
-        property="og:image"
-        content="http://dutchswho.design/img/preview.png"
-      />
+      <meta property="og:image" content="http://dutchswho.design/img/preview.png" />
 
       <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)"/>
       <meta name="theme-color" content="#111"  media="(prefers-color-scheme: dark)"/>
