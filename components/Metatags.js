@@ -16,7 +16,7 @@ export default function MetaTags() {
       <meta property="og:title" content="Dutch Who Design" />
       <meta
         property="og:description"
-        content="A repository to celebrate the work of talented Dutch designers and showcase it to the world."
+        content="A repository of talented Dutch designers."
       />
       <meta property="og:image" content="https://dutchwho.design/img/preview.png" />
 
@@ -32,7 +32,7 @@ export default function MetaTags() {
       <meta name="twitter:title" content="Dutch Who Design" />
       <meta
         name="twitter:description"
-        content="A repository to celebrate the work of talented Dutch designers and showcase it to the world."
+        content="A repository of talented Dutch designers."
       />
       <meta name="twitter:image" content="https://dutchwho.design/img/preview.png"  />
     </>
