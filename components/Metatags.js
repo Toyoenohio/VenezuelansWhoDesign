@@ -24,8 +24,8 @@ export default function MetaTags() {
       <meta name="theme-color" content="#111"  media="(prefers-color-scheme: dark)"/>
 
     
-      <meta name="twitter:card" content="summary_large_image">
-      <meta name="twitter:site" content="dutch who design">
+      <meta name="twitter:card" content="summary_large_image"/>
+      <meta name="twitter:site" content="dutch who design"/>
 
 
       <meta name="twitter:url" content="https://dutchwho.design" />
