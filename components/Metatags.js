@@ -23,18 +23,18 @@ export default function MetaTags() {
       <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)"/>
       <meta name="theme-color" content="#111"  media="(prefers-color-scheme: dark)"/>
 
-      {/* <!-- Twitter --/> */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content="https://dutchwho.design" />
-      <meta property="twitter:title" content="Dutch Who Design" />
+    
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:site" content="dutch who design">
+
+
+      <meta name="twitter:url" content="https://dutchwho.design" />
+      <meta name="twitter:title" content="Dutch Who Design" />
       <meta
-        property="twitter:description"
+        name="twitter:description"
         content="A repository to celebrate the work of talented Dutch designers and showcase it to the world."
       />
-      <meta
-        property="twitter:image"
-        content="https://dutchwho.design/img/preview.png"
-      />
+      <meta name="twitter:image" content="https://dutchwho.design/img/preview.png"  />
     </>
   );
 }
