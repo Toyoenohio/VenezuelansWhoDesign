@@ -275,6 +275,9 @@ a.link:after {
     letter-spacing: -0.02em;     
   }
 
+  svg{
+    fill:#fff;
+  }
 
 
   .dn {
@@ -311,6 +314,9 @@ a.link:after {
   background: #111;
   color: rgba(255,255,255,0.8);  
   letter-spacing: .3px;
+  }
+  svg{
+    fill:#111;
   }
 
 

@@ -203,7 +203,7 @@ export default function Home({ designers }) {
           <h3>How can I remove my name?</h3>
           <p>
             If you’ve been added to the directory and would like to opt-out or
-            make an edit to your profile, please send us a <a className="link" href="mailto:hello@dannyruchtie.com">message</a>
+            make an edit to your profile, please send us a <a className="link" href="mailto:hello@dutchwho.design">message</a>
           </p>
           <h3>Why is my nomination not showing?</h3>
           <p>
