@@ -113,22 +113,8 @@ export default function Home({ designers }) {
                 Queer Design Club
               </a>
             </li>
-            <li>
-              <a
-                className="link"
-                href="https://filipinos-who-design.webflow.io/"
-              >
-                Filipinos Who Design
-              </a>
-            </li>
-            <li>
-              <a
-                className="link"
-                href="https://filipinos-who-design.webflow.io/"
-              >
-                People Of Craft
-              </a>
-            </li>
+
+ 
             <li>
               <a className="link" href="https://indianswhodesign.in/">
                 Indians Who Design
@@ -139,11 +125,7 @@ export default function Home({ designers }) {
                 Asian & Pacific Islanders Who Design
               </a>
             </li>
-            <li>
-              <a className="link" href="https://brazilianswho.design/">
-              Brazilians Who Design
-              </a>
-            </li>
+
           </ul>
           </p>
        
@@ -182,11 +164,13 @@ export default function Home({ designers }) {
                 spaniardswho.design
               </a>
             </li>
+
             <li>
-              <a className="link" href="https://britswho.design/">
-                britswho.design
+              <a className="link" href="https://brazilianswho.design/">
+              Brazilians Who Design
               </a>
             </li>
+
           </ul>
           </p>
         
