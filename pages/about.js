@@ -56,7 +56,6 @@ export default function Home({ designers }) {
           <motion.span variants={item}>experienced designers </motion.span>{" "}
           <motion.span variants={item}>to expand their networks, </motion.span>{" "}
           <motion.span variants={item}>and companies to diversify their teams.</motion.span>{" "}
-
         </p>
       </motion.div>
 
@@ -182,6 +181,9 @@ export default function Home({ designers }) {
             If you’ve been added to the directory and would like to opt-out or
             make an edit to your profile, please send us a <a className="link" href="mailto:hello@dutchwho.design">message</a>
           </p>
+
+          <h3>Stay tuned</h3>
+<p>More designers are being added to the repository. Revisit the website every now and then and you might find a few more names and links.</p>
   
 
           <h3>Who’s behind this?</h3>
@@ -190,6 +192,8 @@ export default function Home({ designers }) {
                 Zeh Fernandes</a> and <a className="link" href="https://twitter.com/MingshiMr">Ming Shi</a> </p>
         </div>
 
+        <h3>Don´t be shy</h3>
+        <p>If you´re part of the list just share the link and you´ll tell the world how proud you are of being part of it.</p>
         <Analytics />
       </div>
 
