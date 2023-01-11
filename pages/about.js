@@ -177,10 +177,7 @@ export default function Home({ designers }) {
 
 
 
-          <h3>Who’s behind this?</h3>
-          <p> Dutch who design is an Initiative by <a className="link" href="http://twitter.com/DannyRuchtie">
-                Danny Ruchtie </a> with exceptional help from <a className="link" href="https://twitter.com/zehf">
-                Zeh Fernandes</a> and <a className="link" href="https://twitter.com/MingshiMr">Ming Shi</a> </p>
+     
       
         </div>
         <div className="col-right">
@@ -189,11 +186,12 @@ export default function Home({ designers }) {
             If you’ve been added to the directory and would like to opt-out or
             make an edit to your profile, please send us a <a className="link" href="mailto:hello@dutchwho.design">message</a>
           </p>
-          <h3>Why is my nomination not showing?</h3>
-          <p>
-          We update this website once a week to include new names. Some nominations might take longer to appear to ensure a healthy gender balance on this website.
-          In the meantime, try nominating a designer who identifies as a woman or non-binary.
-          </p>
+  
+
+          <h3>Who’s behind this?</h3>
+          <p> Dutch who design is an Initiative by <a className="link" href="http://twitter.com/DannyRuchtie">
+                Danny Ruchtie </a> with exceptional help from <a className="link" href="https://twitter.com/zehf">
+                Zeh Fernandes</a> and <a className="link" href="https://twitter.com/MingshiMr">Ming Shi</a> </p>
         </div>
 
         <Analytics />
