@@ -49,18 +49,14 @@ export default function Home({ designers }) {
         exit="hidden"
       >
         <p className="f1 extend">
-          <motion.span variants={item}>place to showcase</motion.span>{" "}
-          <motion.span variants={item}>the work of talented</motion.span>{" "}
-          <motion.span variants={item}>Dutch designers to</motion.span>{" "}
-          <motion.span variants={item}>the world. The goal</motion.span>{" "}
-          <motion.span variants={item}>is to inspire new</motion.span>{" "}
-          <motion.span variants={item}>designers to diversify</motion.span>{" "}
-          <motion.span variants={item}>
-            their references, experienced designers
-          </motion.span>{" "}
-          <motion.span variants={item}>
-            to diversity their network, and companies to diversify their teams.
-          </motion.span>
+          <motion.span variants={item}>is a platform that promotes </motion.span>{" "}
+          <motion.span variants={item}>the work of Dutch designers,</motion.span>{" "}
+          <motion.span variants={item}>aiming to inspire new designers </motion.span>{" "}
+          <motion.span variants={item}>to broaden their horizons, </motion.span>{" "}
+          <motion.span variants={item}>experienced designers </motion.span>{" "}
+          <motion.span variants={item}>to expand their networks, </motion.span>{" "}
+          <motion.span variants={item}>and companies to diversify their teams.</motion.span>{" "}
+
         </p>
       </motion.div>
 
