@@ -186,14 +186,18 @@ export default function Home({ designers }) {
 <p>More designers are being added to the repository. Revisit the website every now and then and you might find a few more names and links.</p>
   
 
+<h3>Don´t be shy</h3>
+        <p>If you´re part of the list just share the link and you´ll tell the world how proud you are of being part of it.</p>
+       
+
           <h3>Who’s behind this?</h3>
           <p> Dutch who design is an Initiative by <a className="link" href="http://twitter.com/DannyRuchtie">
                 Danny Ruchtie </a> with exceptional help from <a className="link" href="https://twitter.com/zehf">
                 Zeh Fernandes</a> and <a className="link" href="https://twitter.com/MingshiMr">Ming Shi</a> </p>
+       
+       
         </div>
 
-        <h3>Don´t be shy</h3>
-        <p>If you´re part of the list just share the link and you´ll tell the world how proud you are of being part of it.</p>
         <Analytics />
       </div>
 
