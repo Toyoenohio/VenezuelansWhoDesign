@@ -154,7 +154,8 @@ export default function Home({ designers }) {
             >
               open source
             </a>{" "}
-            for you to create your showcase. It is built inspired by the tech stack that Jules Forrest kindly made available on <a href="https://github.com/julesforrest/womenwhodesign">GitHub</a>
+            for you to create your showcase. It is built inspired by the tech stack that Jules Forrest kindly made available on <a        className="link"
+              target="_blank" href="https://github.com/julesforrest/womenwhodesign">GitHub</a>
            </p>
 
         
