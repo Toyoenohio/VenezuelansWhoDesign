@@ -83,6 +83,19 @@ export default function Home({ designers }) {
           We didn’t. Our fantastic sibling sites inspire this project:
 
           <ul>
+
+          <li>
+              <a className="link" href="https://uruguayanswho.design/">
+                uruguayanswho.design
+              </a>
+            </li>
+
+            <li>
+              <a className="link" href="https://brazilianswho.design/">
+              Brazilians Who Design
+              </a>
+            </li>
+
             <li>
               <a className="link" href="https://womenwho.design/">
                 Women Who Design
@@ -106,6 +119,12 @@ export default function Home({ designers }) {
             <li>
               <a className="link" href="https://queerdesign.club/">
                 Queer Design Club
+              </a>
+            </li>
+
+            <li>
+              <a className="link" href="https://spaniardswho.design/">
+                spaniardswho.design
               </a>
             </li>
 
@@ -135,39 +154,9 @@ export default function Home({ designers }) {
             >
               open source
             </a>{" "}
-            for you to create your showcase. It is built inspired by the tech stack that Jules Forrest kindly made available on GitHub after building{" "}
-            <a
-              className="link"
-              target="_blank"
-              href="https://github.com/julesforrest/womenwhodesign"
-            >
-              Women Who Design.
-            </a>
+            for you to create your showcase. It is built inspired by the tech stack that Jules Forrest kindly made available on <a href="https://github.com/julesforrest/womenwhodesign">GitHub</a>
            </p>
 
-           <p>   
-            Sites built using our open-source platform:
-       
-          <ul>
-            <li>
-              <a className="link" href="https://uruguayanswho.design/">
-                uruguayanswho.design
-              </a>
-            </li>
-            <li>
-              <a className="link" href="https://spaniardswho.design/">
-                spaniardswho.design
-              </a>
-            </li>
-
-            <li>
-              <a className="link" href="https://brazilianswho.design/">
-              Brazilians Who Design
-              </a>
-            </li>
-
-          </ul>
-          </p>
         
 
 
@@ -191,7 +180,7 @@ export default function Home({ designers }) {
        
 
           <h3>Who’s behind this?</h3>
-          <p> Dutch who design is an Initiative by <a className="link" href="http://twitter.com/DannyRuchtie">
+          <p> Dutch who design is an initiative by <a className="link" href="http://twitter.com/DannyRuchtie">
                 Danny Ruchtie </a> with exceptional help from <a className="link" href="https://twitter.com/zehf">
                 Zeh Fernandes</a> and <a className="link" href="https://twitter.com/MingshiMr">Ming Shi</a> </p>
        
