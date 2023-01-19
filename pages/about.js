@@ -49,7 +49,7 @@ export default function Home({ designers }) {
         exit="hidden"
       >
         <p className="f1 extend">
-          <motion.span variants={item}>is a platform that promotes </motion.span>{" "}
+          <motion.span variants={item}>platform that promotes </motion.span>{" "}
           <motion.span variants={item}>the work of Dutch designers,</motion.span>{" "}
           <motion.span variants={item}>aiming to inspire new designers </motion.span>{" "}
           <motion.span variants={item}>to broaden their horizons, </motion.span>{" "}
