@@ -72,7 +72,7 @@ export default function Home({ designers }) {
             We decided not to collect or display the designer’s photo because we wanted the directory to be less about what someone looks like and more about how they impact the industry.
           </p>
 
-          <h3>Why are featuring artists as well?</h3>
+          <h3>Why are we featuring artists as well?</h3>
           <p>
           We wanted to showcase not only contemporary Dutch design but also leverage all the visibility this project is getting to celebrate the history of design in our country. 
           Every time you reload the website, you can learn more about a newly featured Dutch designer.
@@ -168,7 +168,7 @@ export default function Home({ designers }) {
         <div className="col-right">
           <h3>How can I remove my name?</h3>
           <p>
-            If you’ve been added to the directory and would like to opt-out or
+            If you have been added to the directory and would like to opt-out or
             make an edit to your profile, please send us a message at <a className="link" href="mailto:hello@dutchwho.design">hello@dutchwho.design</a>
           </p>
 
