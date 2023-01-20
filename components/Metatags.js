@@ -16,7 +16,7 @@ export default function MetaTags() {
       <meta property="og:title" content="Argentinians Who Design" />
       <meta
         property="og:description"
-        content="A repository of talented Argentinians designers."
+        content="A repository of talented Argentinian designers."
       />
       <meta
         property="og:image"
@@ -41,7 +41,7 @@ export default function MetaTags() {
       <meta name="twitter:title" content="Argentinians Who Design" />
       <meta
         name="twitter:description"
-        content="A repository of talented Argentinians designers."
+        content="A repository of talented Argentinian designers."
       />
       <meta
         name="twitter:image"

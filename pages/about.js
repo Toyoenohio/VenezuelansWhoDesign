@@ -51,7 +51,7 @@ export default function Home({ designers }) {
         <p className="f1 extend">
           <motion.span variants={item}>platform that promotes </motion.span>{" "}
           <motion.span variants={item}>
-            the work of Argentinians designers,
+            the work of Argentinian designers,
           </motion.span>{" "}
           <motion.span variants={item}>
             aiming to inspire new designers{" "}
