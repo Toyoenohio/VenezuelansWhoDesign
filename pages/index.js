@@ -7,6 +7,51 @@ import Title from "../components/Title.js";
 import MetaTags from "../components/Metatags.js";
 import Analytics from "../components/Analytics.js";
 import FilterSVG from "../components/Icons/FilterSVG.js";
+import { google } from "googleapis";
+
+const getDesigners = async () => {
+  const auth = new google.auth.GoogleAuth({
+    credentials: {
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      private_key: process.env.GOOGLE_PRIVATE_KEY
+    },
+    scopes: [
+      "https://www.googleapis.com/auth/drive",
+      "https://www.googleapis.com/auth/drive.file",
+      "https://www.googleapis.com/auth/spreadsheets"
+    ]
+  });
+
+  const sheets = google.sheets({
+    auth,
+    version: "v4"
+  });
+
+  // Replace the spreadsheetId with your spreadsheet ID.
+  // Replace the range with the tab name.
+  // Issues with permissions look at this guide: https://leerob.io/snippets/google-sheets
+  const response = await sheets.spreadsheets.values.get({
+    spreadsheetId: "1A4X_3PoAeM836ikeBvqc7QPmt-M8IzjfFNuBz5g-42s",
+    range: "Designers" // sheet name
+  });
+
+  //TODO: Map the collum to object name automatically.
+  const rows = response.data.values;
+  const db = rows.map((row) => ({
+    name: row[0],
+    location: row[1],
+    expertise: row[2],
+    link: row[3],
+    approved: row[4],
+    featured: row[5]
+  }));
+
+  let sanitizeResult = db.filter(
+    (item) => item.name != "" && item.approved == "Yes"
+  );
+
+  return JSON.stringify(sanitizeResult);
+};
 
 export async function getStaticProps() {
   const origin =
@@ -17,8 +62,8 @@ export async function getStaticProps() {
 
   console.log(origin);
 
-  const res = await fetch(`${origin}api/designers`);
-  const designers = await res.json();
+  const res = await getDesigners();
+  const designers = await JSON.parse(res);
 
   let uniqueExpertise = new Set();
   designers.map((d) => uniqueExpertise.add(d.expertise));
