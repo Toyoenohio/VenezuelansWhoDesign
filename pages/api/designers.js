@@ -5,26 +5,26 @@ export default async (req, res) => {
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
-        private_key: process.env.GOOGLE_PRIVATE_KEY,
+        private_key: process.env.GOOGLE_PRIVATE_KEY
       },
       scopes: [
         "https://www.googleapis.com/auth/drive",
         "https://www.googleapis.com/auth/drive.file",
-        "https://www.googleapis.com/auth/spreadsheets",
-      ],
+        "https://www.googleapis.com/auth/spreadsheets"
+      ]
     });
 
     const sheets = google.sheets({
       auth,
-      version: "v4",
+      version: "v4"
     });
 
     // Replace the spreadsheetId with your spreadsheet ID.
     // Replace the range with the tab name.
     // Issues with permissions look at this guide: https://leerob.io/snippets/google-sheets
     const response = await sheets.spreadsheets.values.get({
-      spreadsheetId: "1Xod4-E2G1tHePJv2LkJ6z7O9xy1JCR4o33MsBWrcdQU",
-      range: "Designers", // sheet name
+      spreadsheetId: "1A4X_3PoAeM836ikeBvqc7QPmt-M8IzjfFNuBz5g-42s",
+      range: "Designers" // sheet name
     });
 
     //TODO: Map the collum to object name automatically.
@@ -35,7 +35,7 @@ export default async (req, res) => {
       expertise: row[2],
       link: row[3],
       approved: row[4],
-      featured: row[5],
+      featured: row[5]
     }));
 
     let sanitizeResult = db.filter(

@@ -7,7 +7,7 @@ export default function Nominate({ designers }) {
   return (
     <div className="container">
       <Head>
-        <title>Dutch Who Design | Nomiate</title>
+        <title>Argentinians Who Design | Nomiate</title>
         <link rel="icon" href="/favicon.ico" />
         <MetaTags />
       </Head>
@@ -19,7 +19,7 @@ export default function Nominate({ designers }) {
           height="100%"
           frameBorder="0"
           allow="camera; microphone; autoplay; encrypted-media;"
-          src="https://c2ik09kbb2d.typeform.com/to/Dg3muQsR"
+          src="https://mq7jnry7hes.typeform.com/to/jY5yi6jr"
         ></iframe>{" "}
         <script
           type="text/javascript"

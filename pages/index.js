@@ -13,7 +13,7 @@ export async function getStaticProps() {
     process.env.NODE_ENV !== "production"
       ? "http://localhost:3000/"
       : //TODO: Replace to the final domain
-        "https://dutch-who-design-hrghidb3e-designers.vercel.app/";
+        "https://argentinians-who-design.vercel.app/";
 
   console.log(origin);
 
@@ -41,10 +41,10 @@ export async function getStaticProps() {
   return {
     props: {
       designers,
-      filters,
+      filters
     },
 
-    revalidate: 500, // 5 days in seconds
+    revalidate: 500 // 5 days in seconds
   };
 }
 
@@ -124,15 +124,15 @@ export default function Home({ designers, filters }) {
     <div
       className="container"
       style={{
-        overflow: isReady ? "hidden" : "visible",
+        overflow: isReady ? "hidden" : "visible"
       }}
     >
       <Head>
-        <title>Dutch Who Design</title>
+        <title>Argentinians Who Design</title>
         <link id="favicon" rel="alternate icon" href="/favicon.ico" />
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff5c00"/>
-        <meta name="msapplication-TileColor" content="#da532c"/>
-        <meta name="theme-color" content="#ffffff"/>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff5c00" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
 
         <MetaTags />
       </Head>
@@ -189,7 +189,7 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
     <div className={className} onClick={onClick}>
       <Nav />
 
-      <Title className="title m0 p0" text="Dutch*who&nbsp;design" />
+      <Title className="title m0 p0" text="Argentinians*who&nbsp;design" />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -228,7 +228,9 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
               {designers.map((d, i) => (
                 <tr key={`${d.name}-${i}`}>
                   <td>
-                    <a target="_blank" href={d.link}>{d.name}</a>
+                    <a target="_blank" href={d.link}>
+                      {d.name}
+                    </a>
                   </td>
                   <td className="thsize-aux dn">
                     <a href={d.link}>{d.location}</a>

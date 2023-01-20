@@ -1,22 +1,21 @@
 @font-face {
-  font-family: 'Auto-bold';
-  src:url('/fonts/AutoPro-Bold.woff') format('woff');
-}
-
-
-@font-face {
-  font-family: 'Auto-black';
-  src:url('/fonts//AutoPro-Black.woff') format('woff');
+  font-family: "Auto-bold";
+  src: url("/fonts/AutoPro-Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Auto-italic';
-  src:url('/fonts//AutoPro-BoldItalic1.woff') format('woff');
+  font-family: "Auto-black";
+  src: url("/fonts//AutoPro-Black.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Auto-italic-2';
-  src:url('/fonts//AutoPro-BoldItalic2.woff') format('woff');
+  font-family: "Auto-italic";
+  src: url("/fonts//AutoPro-BoldItalic1.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Auto-italic-2";
+  src: url("/fonts//AutoPro-BoldItalic2.woff") format("woff");
 }
 
 html {
@@ -29,17 +28,17 @@ html {
 }
 
 body {
-  font-family:"Auto-bold", "-apple-system, BlinkMacSystemFont, Helvetica Now Display", "Helvetica Neue", "Helvetica";
+  font-family: "Auto-bold",
+    "-apple-system, BlinkMacSystemFont, Helvetica Now Display", "Helvetica Neue",
+    "Helvetica";
   font-size: 20px;
   line-height: 1.5rem;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
   background: #fff;
   color: #111;
   margin: 0;
   padding: 0;
 }
-
-
 
 .container {
   width: 95vw;
@@ -49,16 +48,15 @@ body {
 
 a {
   text-decoration: none;
-
 }
 
-.moreabout a{
+.moreabout a {
   font-family: "Auto-bold";
 }
 
-.moreabout a:hover{
+.moreabout a:hover {
   /* font-family: "Auto-italic"; */
-  color: #FF6B00;
+  color: #ff6b00;
   color: color(display-p3 1 0.36 0);
 }
 
@@ -67,7 +65,7 @@ a {
 
 h1,
 .f1 {
-  font-family:"Auto-black";
+  font-family: "Auto-black";
   font-size: 5.625rem;
   /* letter-spacing: -0.03em; */
   line-height: 100%;
@@ -76,18 +74,17 @@ h1,
   /* font-feature-settings: "ss08" on, "ss02" on, "ss01" on, "salt" on, "cpsp" on; */
 }
 
-h3{
-font-size:1.5rem;
-line-height: 1.7rem;
-padding:0;
-margin:1rem 0 0 0;
-letter-spacing: 0px;
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.7rem;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  letter-spacing: 0px;
 }
 
-p{
-  margin: .25rem 0 4rem 0;
+p {
+  margin: 0.25rem 0 4rem 0;
 }
-
 
 /* Utils 
  ----------------------------- */
@@ -104,14 +101,14 @@ table {
   width: 100%;
 }
 
-table a{
-  font-family:"Auto-bold";
+table a {
+  font-family: "Auto-bold";
 }
 
 table tbody td,
 table thead td {
   border: none;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 table.large thead {
@@ -128,9 +125,8 @@ table tbody tr {
   transition: background 150ms ease-in-out;
 }
 
-
 table tbody tr:hover {
-  background: rgba(0,0,0,0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 /* Rethink is the best aproch */
@@ -152,14 +148,12 @@ table tbody tr:last-child td {
 
 .letter {
   display: inline-block;
-
 }
 
-.letter:nth-child(-n+5){
-  color: #FF6B00;
+.letter:nth-child(-n + 12) {
+  color: #ff6b00;
   color: color(display-p3 1 0.36 0);
 }
-
 
 .title {
   padding-top: 26vh;
@@ -182,7 +176,7 @@ table tbody tr:last-child td {
 
 .arrowback {
   font-size: 3rem;
-  color:#111;
+  color: #111;
   text-decoration: none;
   cursor: pointer;
   overflow: hidden;
@@ -199,10 +193,9 @@ a.link {
   transition: all 150ms ease;
 }
 
-a.link:hover{  
+a.link:hover {
   font-family: "Auto-italic";
 }
-
 
 a.link:before {
   width: 100%;
@@ -210,22 +203,18 @@ a.link:before {
   content: "";
   position: absolute;
   background-size: 1px 1em;
-  -moz-transition: box-shadow .15s ease;
-  transition: box-shadow .15s ease;
+  -moz-transition: box-shadow 0.15s ease;
+  transition: box-shadow 0.15s ease;
   -webkit-transform-origin: 0 0;
   -moz-transform-origin: 0 0;
   transform-origin: 0 0;
 }
-
-
-
 
 a.link:after {
   font-family: Helvetica Now Display, Helvetica Neue, Helvetica;
   /* content: " \2197 "; */
   transition: transform 150ms ease;
 }
-
 
 .sticky {
   display: table;
@@ -272,13 +261,12 @@ a.link:after {
   h1,
   .f1 {
     font-size: 4rem;
-    letter-spacing: -0.02em;     
+    letter-spacing: -0.02em;
   }
 
-  svg{
-    fill:#111;
+  svg {
+    fill: #111;
   }
-
 
   .dn {
     display: none;
@@ -307,31 +295,28 @@ a.link:after {
   }
 }
 
-
-
 @media (prefers-color-scheme: dark) {
   body {
-  background: #111;
-  color: rgba(255,255,255,0.8);  
-  letter-spacing: .3px;
+    background: #111;
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.3px;
   }
-  svg{
-    fill:#fff;
+  svg {
+    fill: #fff;
   }
-
 
   .arrowback {
     color: #fff;
   }
-  
+
   a.link {
     position: relative;
     color: #868689;
     text-decoration: none;
     white-space: nowrap;
     overflow: hidden;
-    -moz-transition: color .15s ease;
-    transition: color .15s ease;
+    -moz-transition: color 0.15s ease;
+    transition: color 0.15s ease;
   }
 
   .sticky tr {
@@ -340,17 +325,16 @@ a.link:after {
 
   table tbody td,
   table thead td {
-  border: none;
-  border-bottom: 1px solid #363636;
-}
+    border: none;
+    border-bottom: 1px solid #363636;
+  }
 
   table tbody tr {
     background: #111;
   }
-  
-  table tbody tr:hover {
-    color:#fff;
-    background: rgba(255,255,255,0.05);
-  }
 
+  table tbody tr:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+  }
 }
