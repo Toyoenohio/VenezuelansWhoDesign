@@ -13,8 +13,7 @@ export async function getStaticProps() {
     process.env.NODE_ENV !== "production"
       ? "http://localhost:3000/"
       : //TODO: Replace to the final domain
-        "/";
-  // "https://argentinians-who-design.vercel.app/";
+        "https://dutch-who-design-hrghidb3e-designers.vercel.app/";
 
   console.log(origin);
 
