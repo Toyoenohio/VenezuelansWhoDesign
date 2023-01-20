@@ -176,7 +176,7 @@ export default function Home({ designers, filters }) {
     >
       <Head>
         <title>Argentinians Who Design</title>
-        <link id="favicon" rel="alternate icon" href="/favicon.ico" />
+        <link id="favicon" rel="alternate icon" href="/favicon.png" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff5c00" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />

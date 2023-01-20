@@ -28,7 +28,7 @@ export default function Home({ designers }) {
     <div className="container">
       <Head>
         <title>Argentinians Who Design | About</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <MetaTags />
       </Head>
 

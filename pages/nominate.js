@@ -8,7 +8,7 @@ export default function Nominate({ designers }) {
     <div className="container">
       <Head>
         <title>Argentinians Who Design | Nomiate</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <MetaTags />
       </Head>
 
