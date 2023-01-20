@@ -1,4 +1,4 @@
-# Argentinian Who Design
+# Argentinians Who Design
 
 ![](https://argentinianswho.design/img/preview.png)
 
