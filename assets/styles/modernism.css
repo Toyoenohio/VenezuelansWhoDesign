@@ -258,7 +258,7 @@ span.copy:after {
   transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
 }
 
-.check.active svg {
+.check.checked svg {
   opacity: 1;
   transform: translateY(0);
 }

@@ -96,7 +96,7 @@ function FilterItem({ label, active, onClick, noFilters }) {
       onClick={onClick}
     >
       {label}
-      <div className={`check ${active ? "active" : ""}`}>
+      <div className={`check ${active ? "checked" : ""}`}>
         <CheckSVG />
       </div>
       <style jsx>{`
