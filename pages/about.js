@@ -246,19 +246,19 @@ export default function Home({ designers }) {
           <p>
             Argentinians Who Design is brought to you by{" "}
             <a
-              href="https://twitter.com/facumontanaro_"
-              target={"_blank"}
-              className="link"
-            >
-              Facu Montanaro
-            </a>{" "}
-            and{" "}
-            <a
               href="https://twitter.com/andreuscafe"
               target={"_blank"}
               className="link"
             >
               @andreuscafe
+            </a>
+            and{" "}
+            <a
+              href="https://twitter.com/facumontanaro_"
+              target={"_blank"}
+              className="link"
+            >
+              @facumontanaro_
             </a>
             . If you want to help us keep the project going, you can send a{" "}
             <a
@@ -266,9 +266,9 @@ export default function Home({ designers }) {
               target={"_blank"}
               className="link"
             >
-              cafecito donation
+              Cafecito
             </a>{" "}
-            to keep everything running (domain, mail, host, etc).
+            donation to keep everything running (domain, mail, host, etc).
           </p>
         </div>
 

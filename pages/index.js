@@ -8,6 +8,7 @@ import MetaTags from "../components/Metatags.js";
 import Analytics from "../components/Analytics.js";
 import FilterSVG from "../components/Icons/FilterSVG.js";
 import { google } from "googleapis";
+import Image from "next/image.js";
 
 const getDesigners = async () => {
   const auth = new google.auth.GoogleAuth({
@@ -184,6 +185,10 @@ export default function Home({ designers, filters }) {
         <MetaTags />
       </Head>
 
+      <div className="sol">
+        <Image src="/img/sol.svg" alt="Argentina" width={96} height={96} />
+      </div>
+
       {!isReady ? (
         <Content
           designers={designersList}
@@ -281,13 +286,19 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
                     </a>
                   </td>
                   <td className="thsize-aux dn">
-                    <a href={d.link}>{d.location}</a>
+                    <a target="_blank" href={d.link}>
+                      {d.location}
+                    </a>
                   </td>
                   <td className="thsize-aux">
-                    <a href={d.link}>{d.expertise}</a>
+                    <a target="_blank" href={d.link}>
+                      {d.expertise}
+                    </a>
                   </td>
                   <td className="thsize-link">
-                    <a href={d.link}>→</a>
+                    <a target="_blank" href={d.link}>
+                      →
+                    </a>
                   </td>
                 </tr>
               ))}
@@ -330,6 +341,14 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
           color: inherit;
           display: inline-block;
           font-weight: 500;
+        }
+
+        tbody tr {
+          transition: all 0.2s ease-in-out;
+        }
+
+        tbody tr:hover {
+          color: rgba(255, 255, 255, 0.8);
         }
 
         table tbody td {
