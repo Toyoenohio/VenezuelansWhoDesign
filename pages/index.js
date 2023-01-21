@@ -187,7 +187,13 @@ export default function Home({ designers, filters }) {
 
       <div className="sol">
         <div className="normal">
-          <Image src="/img/sol.svg" alt="Argentina" width={96} height={96} />
+          <Image
+            src="/img/sol.svg"
+            alt="Argentina"
+            width={96}
+            height={96}
+            priority
+          />
         </div>
         <div className="wink">
           <Image
@@ -195,6 +201,7 @@ export default function Home({ designers, filters }) {
             alt="Argentina"
             width={96}
             height={96}
+            priority
           />
         </div>
       </div>
@@ -216,6 +223,7 @@ export default function Home({ designers, filters }) {
             handleFilterClick={handleFilterClick}
             handleCloseFilter={handleCloseFilter}
             categoryName={filterCategory}
+            key="filter"
           />
         ) : null}
       </AnimatePresence>

@@ -1,9 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Title from "../components/Title.js";
 import MetaTags from "../components/Metatags.js";
 import Analytics from "../components/Analytics.js";
+import { useState } from "react";
 
 const item = {
   hidden: { opacity: 0, y: "15%" },
@@ -24,6 +25,8 @@ const container = {
 };
 
 export default function Home({ designers }) {
+  const [copied, setCopied] = useState(false);
+
   return (
     <div className="container">
       <Head>
@@ -93,115 +96,115 @@ export default function Home({ designers }) {
           </p>
 
           <h3>How did you come up with this idea?</h3>
-          <p>
+          <p className="m0">
             We didn’t. Our fantastic sibling sites inspire this project:
-            <ul>
-              <li>
-                <a
-                  className="link"
-                  href="https://brazilianswho.design/"
-                  target="_blank"
-                >
-                  Brazilians Who Design
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="link"
-                  href="https://uruguayanswho.design/"
-                  target="_blank"
-                >
-                  Uruguayans Who Design
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="link"
-                  href="https://dutchwho.design/"
-                  target="_blank"
-                >
-                  Dutch Who Design
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="link"
-                  href="https://womenwho.design/"
-                  target="_blank"
-                >
-                  Women Who Design
-                </a>
-              </li>
-              <li>
-                <a
-                  className="link"
-                  href="https://www.womenwhodraw.com/"
-                  target="_blank"
-                >
-                  Women Who Draw
-                </a>
-              </li>
-              <li>
-                <a
-                  className="link"
-                  href="http://www.28blacks.com/"
-                  target="_blank"
-                >
-                  28 Black Designers
-                </a>
-              </li>
-              <li>
-                <a
-                  className="link"
-                  href="https://www.latinxswhodesign.com/"
-                  target="_blank"
-                >
-                  Latinx Who Design
-                </a>
-              </li>
-              <li>
-                <a
-                  className="link"
-                  href="https://queerdesign.club/"
-                  target="_blank"
-                >
-                  Queer Design Club
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="link"
-                  href="https://spaniardswho.design/"
-                  target="_blank"
-                >
-                  Spaniards Who Design
-                </a>
-              </li>
-
-              <li>
-                <a
-                  className="link"
-                  href="https://indianswhodesign.in/"
-                  target="_blank"
-                >
-                  Indians Who Design
-                </a>
-              </li>
-              <li>
-                <a
-                  className="link"
-                  href="https://www.apiwho.design/"
-                  target="_blank"
-                >
-                  Asian & Pacific Islanders Who Design
-                </a>
-              </li>
-            </ul>
           </p>
+          <ul>
+            <li>
+              <a
+                className="link"
+                href="https://brazilianswho.design/"
+                target="_blank"
+              >
+                Brazilians Who Design
+              </a>
+            </li>
+
+            <li>
+              <a
+                className="link"
+                href="https://uruguayanswho.design/"
+                target="_blank"
+              >
+                Uruguayans Who Design
+              </a>
+            </li>
+
+            <li>
+              <a
+                className="link"
+                href="https://dutchwho.design/"
+                target="_blank"
+              >
+                Dutch Who Design
+              </a>
+            </li>
+
+            <li>
+              <a
+                className="link"
+                href="https://womenwho.design/"
+                target="_blank"
+              >
+                Women Who Design
+              </a>
+            </li>
+            <li>
+              <a
+                className="link"
+                href="https://www.womenwhodraw.com/"
+                target="_blank"
+              >
+                Women Who Draw
+              </a>
+            </li>
+            <li>
+              <a
+                className="link"
+                href="http://www.28blacks.com/"
+                target="_blank"
+              >
+                28 Black Designers
+              </a>
+            </li>
+            <li>
+              <a
+                className="link"
+                href="https://www.latinxswhodesign.com/"
+                target="_blank"
+              >
+                Latinx Who Design
+              </a>
+            </li>
+            <li>
+              <a
+                className="link"
+                href="https://queerdesign.club/"
+                target="_blank"
+              >
+                Queer Design Club
+              </a>
+            </li>
+
+            <li>
+              <a
+                className="link"
+                href="https://spaniardswho.design/"
+                target="_blank"
+              >
+                Spaniards Who Design
+              </a>
+            </li>
+
+            <li>
+              <a
+                className="link"
+                href="https://indianswhodesign.in/"
+                target="_blank"
+              >
+                Indians Who Design
+              </a>
+            </li>
+            <li>
+              <a
+                className="link"
+                href="https://www.apiwho.design/"
+                target="_blank"
+              >
+                Asian & Pacific Islanders Who Design
+              </a>
+            </li>
+          </ul>
 
           <h3>How did you build this?</h3>
           <p>
@@ -229,9 +232,42 @@ export default function Home({ designers }) {
           <p>
             If you have been added to the directory and would like to opt-out or
             make an edit to your profile, please send us a message at{" "}
-            <a className="link" href="mailto:hello@argentinianswho.design">
+            {/* when you click the link, it should copy the email to clipboard */}
+            <span
+              className="link copy"
+              href="#"
+              onClick={() => {
+                setCopied(true);
+                navigator.clipboard.writeText("hello@argentinianswho.design");
+
+                setTimeout(() => {
+                  setCopied(false);
+                }, 2000);
+              }}
+            >
               hello@argentinianswho.design
-            </a>
+            </span>{" "}
+            <AnimatePresence exitBeforeEnter>
+              {copied && (
+                <motion.span
+                  initial={{
+                    opacity: 0,
+                    x: -10
+                  }}
+                  animate={{
+                    opacity: 1,
+                    x: 0
+                  }}
+                  exit={{
+                    opacity: 0,
+                    x: -10
+                  }}
+                  className="copy-tooltip"
+                >
+                  Copied!
+                </motion.span>
+              )}
+            </AnimatePresence>
           </p>
 
           <h3>Don´t be shy</h3>
