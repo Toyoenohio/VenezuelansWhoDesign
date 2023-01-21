@@ -147,7 +147,6 @@ table tbody tr:last-child td {
 
 .letter:nth-child(-n + 12) {
   color: #74acdf;
-  color: color(display-p3 1 0.36 0);
 }
 
 .title {

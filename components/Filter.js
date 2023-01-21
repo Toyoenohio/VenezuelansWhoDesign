@@ -107,7 +107,6 @@ function FilterItem({ label, active, onClick, noFilters }) {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          align-items: center;
           color: #999;
           transition: color 0.2s ease;
         }
@@ -123,8 +122,6 @@ function FilterItem({ label, active, onClick, noFilters }) {
         .check {
           width: 1.7rem;
           height: 1.7rem;
-          /*background: #fff;
-          border-radius: 6px; */
           display: flex;
           justify-content: center;
           align-items: center;
