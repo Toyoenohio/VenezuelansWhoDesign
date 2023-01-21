@@ -258,9 +258,15 @@ span.copy:after {
   transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
 }
 
+.check.checked {
+  position: relative;
+}
+
 .check.checked svg {
   opacity: 1;
   transform: translateY(0);
+  position: absolute;
+  width: 100%;
 }
 
 .filterIsOpen {
