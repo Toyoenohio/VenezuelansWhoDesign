@@ -197,6 +197,7 @@ export default function Home({ designers, filters }) {
         {filterIsOpen ? (
           <Filter
             items={filterList.filter((f) => f.category == filterCategory)}
+            filterList={filterList}
             handleFilterClick={handleFilterClick}
             handleCloseFilter={handleCloseFilter}
             categoryName={filterCategory}
@@ -328,6 +329,7 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
           padding-top: 0.6em;
           color: inherit;
           display: inline-block;
+          font-weight: 500;
         }
 
         table tbody td {

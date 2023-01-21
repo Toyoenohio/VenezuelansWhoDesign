@@ -75,12 +75,12 @@ export default function Home({ designers }) {
               <a className="link">fill out this form</a>
             </Link>{" "}
             with their information and a few words about why you’re nominating
-            them. You can link to their portfolio, Linkedin, or other social
-            profiles — any link that you feel best represents how that person is
-            making a difference in the industry. We decided not to collect or
-            display the designer’s photo because we wanted the directory to be
-            less about what someone looks like and more about how they impact
-            the industry.
+            them. You can choose to link to their portfolio, to their Linkedin,
+            or to other social profiles — any link that you feel best represents
+            how that person is making a difference in the industry. We decided
+            not to collect or display the designer’s photo because we wanted the
+            directory to be less about what someone looks like and more about
+            what they do.
           </p>
 
           <h3>Why are we featuring artists as well?</h3>
@@ -97,56 +97,106 @@ export default function Home({ designers }) {
             We didn’t. Our fantastic sibling sites inspire this project:
             <ul>
               <li>
-                <a className="link" href="https://uruguayanswho.design/">
-                  uruguayanswho.design
-                </a>
-              </li>
-
-              <li>
-                <a className="link" href="https://brazilianswho.design/">
+                <a
+                  className="link"
+                  href="https://brazilianswho.design/"
+                  target="_blank"
+                >
                   Brazilians Who Design
                 </a>
               </li>
 
               <li>
-                <a className="link" href="https://womenwho.design/">
+                <a
+                  className="link"
+                  href="https://uruguayanswho.design/"
+                  target="_blank"
+                >
+                  Uruguayans Who Design
+                </a>
+              </li>
+
+              <li>
+                <a
+                  className="link"
+                  href="https://dutchwho.design/"
+                  target="_blank"
+                >
+                  Dutch Who Design
+                </a>
+              </li>
+
+              <li>
+                <a
+                  className="link"
+                  href="https://womenwho.design/"
+                  target="_blank"
+                >
                   Women Who Design
                 </a>
               </li>
               <li>
-                <a className="link" href="https://www.womenwhodraw.com/">
+                <a
+                  className="link"
+                  href="https://www.womenwhodraw.com/"
+                  target="_blank"
+                >
                   Women Who Draw
                 </a>
               </li>
               <li>
-                <a className="link" href="http://www.28blacks.com/">
+                <a
+                  className="link"
+                  href="http://www.28blacks.com/"
+                  target="_blank"
+                >
                   28 Black Designers
                 </a>
               </li>
               <li>
-                <a className="link" href="https://www.latinxswhodesign.com/">
+                <a
+                  className="link"
+                  href="https://www.latinxswhodesign.com/"
+                  target="_blank"
+                >
                   Latinx Who Design
                 </a>
               </li>
               <li>
-                <a className="link" href="https://queerdesign.club/">
+                <a
+                  className="link"
+                  href="https://queerdesign.club/"
+                  target="_blank"
+                >
                   Queer Design Club
                 </a>
               </li>
 
               <li>
-                <a className="link" href="https://spaniardswho.design/">
-                  spaniardswho.design
+                <a
+                  className="link"
+                  href="https://spaniardswho.design/"
+                  target="_blank"
+                >
+                  Spaniards Who Design
                 </a>
               </li>
 
               <li>
-                <a className="link" href="https://indianswhodesign.in/">
+                <a
+                  className="link"
+                  href="https://indianswhodesign.in/"
+                  target="_blank"
+                >
                   Indians Who Design
                 </a>
               </li>
               <li>
-                <a className="link" href="https://www.apiwho.design/">
+                <a
+                  className="link"
+                  href="https://www.apiwho.design/"
+                  target="_blank"
+                >
                   Asian & Pacific Islanders Who Design
                 </a>
               </li>
@@ -163,8 +213,8 @@ export default function Home({ designers }) {
             >
               open source
             </a>{" "}
-            for you to create your showcase. It is built inspired by the tech
-            stack that Jules Forrest kindly made available on{" "}
+            for you to create your own showcase. It is built inspired by the
+            tech stack that Jules Forrest kindly made available on{" "}
             <a
               className="link"
               target="_blank"
@@ -184,34 +234,41 @@ export default function Home({ designers }) {
             </a>
           </p>
 
-          <h3>Stay tuned</h3>
-          <p>
-            More designers are being added to the repository. Revisit the
-            website every now and then and you might find a few more names and
-            links.
-          </p>
-
           <h3>Don´t be shy</h3>
           <p>
-            If you´re part of the list just share the link and you´ll tell the
-            world how proud you are of being part of it.
+            If you’re part of the list and want to help us out, just share the
+            link on your social media platforms and spread the world about our
+            community and tell everyone how proud you’re to be Argentinian and a
+            designer.
           </p>
 
           <h3>Who’s behind this?</h3>
           <p>
-            {" "}
-            Argentinians Who Design is an initiative by{" "}
-            <a className="link" href="http://twitter.com/DannyRuchtie">
-              Danny Ruchtie{" "}
-            </a>{" "}
-            with exceptional help from{" "}
-            <a className="link" href="https://twitter.com/zehf">
-              Zeh Fernandes
+            Argentinians Who Design is brought to you by{" "}
+            <a
+              href="https://twitter.com/facumontanaro_"
+              target={"_blank"}
+              className="link"
+            >
+              Facu Montanaro
             </a>{" "}
             and{" "}
-            <a className="link" href="https://twitter.com/MingshiMr">
-              Ming Shi
+            <a
+              href="https://twitter.com/andreuscafe"
+              target={"_blank"}
+              className="link"
+            >
+              @andreuscafe
+            </a>
+            . If you want to help us keep the project going, you can send a{" "}
+            <a
+              href="https://cafecito.app/argentiniansdesign"
+              target={"_blank"}
+              className="link"
+            >
+              cafecito donation
             </a>{" "}
+            to keep everything running (domain, mail, host, etc).
           </p>
         </div>
 

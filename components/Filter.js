@@ -8,16 +8,17 @@ const sidebarAnimation = {
     x: "0%",
     transition: {
       duration: 0.4,
-      ease: "easeInOut",
-    },
-  },
+      ease: "easeInOut"
+    }
+  }
 };
 
 export default function Filter({
   items,
+  filterList,
   handleFilterClick,
   handleCloseFilter,
-  categoryName,
+  categoryName
 }) {
   return (
     <motion.div
@@ -31,7 +32,7 @@ export default function Filter({
         right: 0,
         width: "100%",
         maxWidth: "420px",
-        overflowY: "scroll",
+        overflowY: "scroll"
       }}
     >
       <div className="sidebar">
@@ -56,6 +57,7 @@ export default function Filter({
             onClick={() => {
               handleFilterClick(item);
             }}
+            noFilters={filterList.filter((f) => f.active).length == 0}
           />
         ))}
       </div>
@@ -75,18 +77,24 @@ export default function Filter({
           height: 1.5rem;
         }
 
-        h3 {
-          margin-top: 4rem;
+        h4 {
+          margin: 4rem 0;
           font-weight: 500;
+          font-size: 0.8em;
         }
       `}</style>
     </motion.div>
   );
 }
 
-function FilterItem({ label, active, onClick }) {
+function FilterItem({ label, active, onClick, noFilters }) {
   return (
-    <div className="filterItem" onClick={onClick}>
+    <div
+      className={`filterItem ${noFilters ? "no-filters" : ""} ${
+        active ? "active" : ""
+      }`}
+      onClick={onClick}
+    >
       {label}
       <div className={`check ${active ? "active" : ""}`}>
         <CheckSVG />
@@ -94,11 +102,22 @@ function FilterItem({ label, active, onClick }) {
       <style jsx>{`
         .filterItem {
           cursor: pointer;
-          font-size: 1.7rem;
+          font-size: 1.36em;
+          line-height: 1.5em;
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin: 0.1rem 0;
+          align-items: center;
+          color: #999;
+          transition: color 0.2s ease;
+        }
+
+        .filterItem.no-filters {
+          color: #000;
+        }
+
+        .filterItem.active {
+          color: #000;
         }
 
         .check {
@@ -106,6 +125,9 @@ function FilterItem({ label, active, onClick }) {
           height: 1.7rem;
           /*background: #fff;
           border-radius: 6px; */
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       `}</style>
     </div>
