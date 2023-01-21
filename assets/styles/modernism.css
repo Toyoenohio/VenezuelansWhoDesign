@@ -128,6 +128,18 @@ table tbody tr:last-child td {
   top: 2rem;
 }
 
+.sol .wink {
+  display: none;
+}
+
+.sol:hover .wink {
+  display: block;
+}
+
+.sol:hover .normal {
+  display: none;
+}
+
 .letter {
   display: inline-block;
 }

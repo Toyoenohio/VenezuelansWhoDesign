@@ -186,7 +186,17 @@ export default function Home({ designers, filters }) {
       </Head>
 
       <div className="sol">
-        <Image src="/img/sol.svg" alt="Argentina" width={96} height={96} />
+        <div className="normal">
+          <Image src="/img/sol.svg" alt="Argentina" width={96} height={96} />
+        </div>
+        <div className="wink">
+          <Image
+            src="/img/sol_guino.svg"
+            alt="Argentina"
+            width={96}
+            height={96}
+          />
+        </div>
       </div>
 
       {!isReady ? (
