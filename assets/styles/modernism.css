@@ -305,7 +305,7 @@ a.link:after {
     fill: #fff;
   }
 
-  .arrowback {
+  .arrowback:not(.nominate) {
     color: #fff;
   }
 
