@@ -72,7 +72,7 @@ export default function Home({ designers }) {
         <div className="col-left">
           <h3>How can I nominate someone?</h3>
           <p>
-            If you know a Argentinian designer whose work or voice is valuable
+            If you know an Argentinian designer whose work or voice is valuable
             to the design industry, please{" "}
             <Link href="/nominate">
               <a className="link">fill out this form</a>
@@ -273,7 +273,7 @@ export default function Home({ designers }) {
           <h3>Don´t be shy</h3>
           <p>
             If you’re part of the list and want to help us out, just share the
-            link on your social media platforms and spread the world about our
+            link on your social media platforms and spread the word about our
             community and tell everyone how proud you’re to be Argentinian and a
             designer.
           </p>

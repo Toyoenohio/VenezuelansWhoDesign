@@ -279,7 +279,7 @@ function Content({ designers, handleOpenFilter, className, onClick }) {
                   e.preventDefault();
                 }}
               >
-                Location <FilterSVG />
+                From <FilterSVG />
               </td>
               <td
                 className="thsize-aux filterTable"
