@@ -232,20 +232,21 @@ export default function Home({ designers }) {
           <p>
             If you have been added to the directory and would like to opt-out or
             make an edit to your profile, please send us a message at{" "}
-            {/* when you click the link, it should copy the email to clipboard */}
             <span
               className="link copy"
               href="#"
               onClick={() => {
                 setCopied(true);
-                navigator.clipboard.writeText("hello@argentinianswho.design");
+                navigator.clipboard.writeText(
+                  "argentinianswhodesign@gmail.com"
+                );
 
                 setTimeout(() => {
                   setCopied(false);
                 }, 2000);
               }}
             >
-              hello@argentinianswho.design
+              argentinianswhodesign@gmail.com
             </span>{" "}
             <AnimatePresence exitBeforeEnter>
               {copied && (
