@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;600&family=Montserrat&display=swap');
+
+html {
+    background-color: #f1f5f9;
+    font-family: sans-serif;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 20px;
+    line-height: 1.5rem;
+    background: #56070c;
+    color: #fff;
+    margin: 0;
+    padding: 1.5rem;
+    font-family: 'Figtree', sans-serif;
+  }  
+  a{
+    text-decoration: none;
+  }
+  h1 {
+    margin: 1rem 0;
+    font-size: 4.5rem;
+    font-weight: 600;
+  }
+  
+  @media screen and (min-width: 636px) {
+    
+    
+  }
