@@ -1,0 +1,40 @@
+---
+import CheckSVG from "./Icons/CheckSVG";
+import CloseSVG from "./Icons/CloseSVG";
+import FilterItem from "./FilterItem.astro";
+---
+<div class="sidebar">
+    <a
+      aria-label="Close"
+      href="#"
+      class="close"
+    >
+      <CloseSVG />
+    </a>
+    <h4>
+        Filtro
+    </h4>
+    <FilterItem/>
+  </div>
+  <style>
+    .sidebar {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      color: #000;
+      padding: 2.5rem;
+      min-height: 100vh;
+    }
+
+    .close {
+      display: block;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    h4 {
+      margin: 4rem 0;
+      font-weight: 500;
+      font-size: 0.8em;
+    }
+</style>

@@ -1,0 +1,43 @@
+---
+import CheckSVG from "./Icons/CheckSVG";
+---
+<div class="filterItem noFilters">
+    Item
+      <div class=active>
+        <CheckSVG />
+    </div>
+</div>
+<div class="filterItem active">
+    Item
+      <div class=active>
+        <CheckSVG />
+    </div>
+</div>
+      <style>
+        .filterItem {
+          cursor: pointer;
+          font-size: 1.36em;
+          line-height: 1.5em;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          color: #999;
+          transition: color 0.2s ease;
+        }
+
+        .filterItem.no-filters {
+          color: #000;
+        }
+
+        .filterItem.active {
+          color: #000;
+        }
+
+        .check {
+          width: 1.7rem;
+          height: 1.7rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    </style>
