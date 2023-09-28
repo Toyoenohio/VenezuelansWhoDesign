@@ -1,0 +1,29 @@
+<style>
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 300px;
+        background-color: #333;
+        transform: translateX(-310px);
+        transition: transform 0.3s;
+        color: white;
+        padding: 10px;
+    }
+    
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    
+    .close-btn {
+        margin: 10px;
+        cursor: pointer;
+    }
+    </style>
+    
+    <div class="sidebar">
+        <button id="closeSidebarBtn" class="close-btn">Cerrar</button>
+        <!-- Aquí puedes agregar el contenido de tu sidebar -->
+    </div>
+    

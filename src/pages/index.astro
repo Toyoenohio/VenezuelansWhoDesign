@@ -1,9 +1,9 @@
 ---
-import Filter from '../components/Filter.astro';
 import Header from '../components/Header.astro';
 import Tabla from '../components/Tabla.astro';
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
+import Sidebar from '../components/Sidebar.astro';
 
 ---
 
@@ -11,8 +11,10 @@ import '../styles/global.css';
 	<Header/>
 	<main>
 		<h1>Venezuelans<br> Who Design</h1>
+		<button id="toggleSidebarBtn">Abrir Sidebar</button>
+		<Sidebar />
 		<Tabla/>
-		<Filter/>
+		
 	</main>
 </Layout>
 <style>

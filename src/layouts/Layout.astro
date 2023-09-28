@@ -19,7 +19,25 @@ import Analytics from '../components/Analytics.astro';
 		<Analytics id="G-QZZSZ1FT5Q"/>
 	</head>
 	<body>
-		<slot />
+	<slot />
+	<!-- ... el resto de tu layout ... -->
+<script>
+    document.getElementById("toggleSidebarBtn")?.addEventListener("click", toggleSidebar);
+    document.getElementById("closeSidebarBtn")?.addEventListener("click", closeSidebar);
+
+    function toggleSidebar() {
+        const sidebar = document.querySelector('.sidebar');
+        if (sidebar.classList.contains('open')) {
+            sidebar.classList.remove('open');
+        } else {
+            sidebar.classList.add('open');
+        }
+    }
+
+    function closeSidebar() {
+        document.querySelector('.sidebar').classList.remove('open');
+    }
+</script>
 	</body>
 	
 </html>
